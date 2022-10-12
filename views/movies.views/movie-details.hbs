@@ -1,0 +1,23 @@
+<h2>{{movie.title}} - Details</h2>
+<hr> </hr>
+<div><a href="/">Home</a></div>
+<div><a href="/movies">List of Movies</a></div>
+
+
+{{!-- forEach movie del array de movies de la db --}}
+<hr> </hr>
+<p>Title: <b>{{movie.title}}</b></p>
+<p>Genre: <b>{{movie.genre}}</b></p>
+<p>Plot: <b>{{movie.plot}}</b></p>
+{{#each movie.cast}}
+<p>Cast: <b>{{name}}</b></p>
+<ul>
+    <li><p>{{occupation}}</p></li>
+    <li><p>{{catchPhrase}}</p></li>
+</ul>
+{{/each}}
+<hr> </hr>
+
+<form action="/movies/{{movie._id}}/delete" method="post">
+    <button type="submit">Delete Movie</button>
+</form>

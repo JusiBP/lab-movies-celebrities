@@ -15,7 +15,7 @@ router.post("/create", (req, res, next)=>{
         const data = {
             celebrity: result
         }
-        res.redirect("/celebrities"); //redirect reRutea (requiere ruta), y accedes a la coincidencia, en este caso a router.get("/celebrities/celebrities")
+        res.redirect("/celebrities"); //redirect reRutea (requiere ruta), y accedes a la coincidencia, en este caso a router.get("/celebrities")
     })
     .catch(err => {
         console.log("error: ", err);

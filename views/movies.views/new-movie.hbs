@@ -1,0 +1,18 @@
+<h2>Introduce movie</h2>
+<hr> </hr>
+<div><a href="/">Home</a></div>
+<div><a href="/movies">List of Movies</a></div>
+<hr> </hr>
+
+<form action="/movies/create" method="post">
+    <input type="text" name="title" placeholder="Movie Title">
+    <input type="text" name="genre" placeholder="Movie Genre">
+    <input type="text" name="plot" placeholder="Movie Plot">
+    {{!-- <input type="text" name="cast" placeholder="Movie Cast"> --}}
+    <select name="cast" placeholder="Movie Cast">
+      {{#each celebrity}}
+      <option value="{{this._id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+    <button type="submit">Introduce Movie</button>
+</form>

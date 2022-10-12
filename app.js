@@ -19,10 +19,11 @@ const app = express();
 require('./config')(app);
 
 // default value for title local
-const projectName = 'lab-movies-celebrities';
-const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
+const projectName = 'LAB - Movies & Celebrities';
+// const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
+// app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`
 
-app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`; //app.locals es un objeto al que tienes acceso en toda la pp mientras dura la ejecución del programa.
+app.locals.title = `${projectName}`; //app.locals es un objeto al que tienes acceso en toda la pp mientras dura la ejecución del programa.
 
 // 👇 Start handling routes here
 const index = require('./routes/index'); //requerimos las rutas de index en el archivo app.js
@@ -31,7 +32,11 @@ app.use('/', index); //Concatena la ruta usada en la app con la ruta en index.js
 const celebritiesRoutes = require('./routes/celebrities.routes'); //requerimos las rutas de celebrities.routes en el archivo app.js
 app.use('/celebrities', celebritiesRoutes); //Concatena la ruta usada en la app con la ruta en celebrities.routes.js
 
+const moviesRoutes = require('./routes/movies.routes'); //requerimos las rutas de movies.routes en el archivo app.js
+app.use('/movies', moviesRoutes); //Concatena la ruta usada en la app con la ruta en celebrities.routes.js
+
 const Celebrity = require("./models/Celebrity.model.js"); //requerimos el modelo(schema) de celebrity en el archivo app.js
+const Movies = require("./models/Movie.model.js"); //requerimos el modelo(schema) de Movie en el archivo app.js
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);

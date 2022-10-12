@@ -1,0 +1,12 @@
+<h2>List of Movies</h2>
+<div><a href="/">Home</a></div>
+<div><a href="/movies/create">Introduce Movie</a></div>
+<hr> </hr>
+<hr> </hr>
+
+{{#each movie}} 
+{{!-- forEach movie del array de movies de la db --}}
+<p>Title: <b>{{this.title}}</b></p>
+<a href="/movies/{{this._id}}">More details</a>
+<hr> </hr>
+{{/each}}

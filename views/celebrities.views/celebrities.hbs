@@ -1,8 +1,11 @@
 <h2>List of Celebrities</h2>
+<div><a href="/">Home</a></div>
+<div><a href="/celebrities/create">Introduce Celebrity</a></div>
+<hr> </hr>
+<hr> </hr>
 
 {{#each celebrity}} 
 {{!-- forEach celebrity del array de celebrities de la db --}}
-<hr> </hr>
 <p>name: <b>{{this.name}}</b></p>
 <p>Occupation: <b>{{this.occupation}}</b></p>
 <p>Catch Phrase: <b>{{this.catchPhrase}}</b></p>
