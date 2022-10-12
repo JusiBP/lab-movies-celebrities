@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/lab-movies-celebrities";
 
 mongoose
-  .connect(MONGO_URI)
+  .connect(MONGO_URI) //Conexión a db. Utilizamos la constante creada justo encima. Si MONGODB_URI no esta definida en .env, coge el link que esta hardcoded al lado.
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })

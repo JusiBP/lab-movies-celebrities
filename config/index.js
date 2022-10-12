@@ -28,9 +28,12 @@ module.exports = (app) => {
   app.use(cookieParser());
 
   // Normalizes the path to the views folder
-  app.set("views", path.join(__dirname, "..", "views"));
+  app.set("views", path.join(__dirname, "..", "views")); 
+  // path.join se usa si la carpeta que enceseitamos no esta en raiz y por tanto debemos movernos. 
+  // en este caso, __dirname(config), ".."(volvemos atrás a lab-movies), "views"(entramos views).
+
   // Sets the view engine to handlebars
-  app.set("view engine", "hbs");
+  app.set("view engine", "hbs"); //motor de renderizado, hbs
   // Handles access to the public folder
   app.use(express.static(path.join(__dirname, "..", "public")));
 
